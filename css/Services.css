@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.drag-image{
+  border: 3px dashed #330072;
+  height: 300px;
+  width: 550px;
+  border-radius: 10px;
+  font-weight:700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+.drag-image.active{
+  border: 2px solid #330072;
+}
+.drag-image .icon{
+  font-size: 30px;
+  color: #330072;
+}
+.drag-image h6{
+  font-size: 20px;
+  font-weight: 300;
+  color: #330072;
+}
+.drag-image span{
+  font-size: 14px;
+  font-weight: 300;
+  color: #330072;
+  margin: 10px 0 15px 0;
+}
+.drag-image button{
+  padding: 10px 25px;
+  font-size: 14px; 
+  font-weight: 300;
+  border: none;
+  outline: none;
+  background:transparent;
+  background-color: #330072;
+  color: white;
+  border:1px solid #330072;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:all 0.5s;
+}
+
+.button-s {
+  z-index: 1;
+  position: relative;
+  font-size: inherit;
+  font-family: inherit;
+  color: #ffffff;
+  background-color: #330072;
+  padding: 0.5em 1em;
+  outline: none;
+  border: none;
+  overflow: hidden;
+  cursor: pointer;
+  width: 150px;
+  margin-top: 20px;
+}
+
+.button-s::after {
+  content: '';
+  z-index: -1;
+  background-color: hsla(0, 0%, 100%, 0.2);
+  position: absolute;
+  top: -50%;
+  bottom: -50%;
+  width: 1.25em;
+  transform: translate3d(-525%, 0, 0) rotate(35deg);
+}
+
+button:hover::after {
+  transition: transform 0.45s ease-in-out;
+  transform: translate3d(200%, 0, 0) rotate(35deg);
+}
+@media (max-width: 420px) {
+  .drag-image {
+    width: 100%;
+  }
+  }
